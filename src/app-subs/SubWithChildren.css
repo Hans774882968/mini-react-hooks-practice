@@ -1,0 +1,17 @@
+.sub-with-children {
+  background-color: green;
+  color: white;
+}
+
+.sub-with-children .children-container {
+  display: flex;
+  gap: 8px;
+}
+
+.sub-with-children .children-container .child0, .sub-with-children .children-container .child1 {
+  color: skyblue;
+}
+
+.sub-with-children .children-container .child2 {
+  color: blue;
+}
