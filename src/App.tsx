@@ -1,7 +1,7 @@
-/** @jsx myCreateElement */
-/** @jsxFrag myFragment */
+/** @jsx hansCreateElement */
+/** @jsxFrag hansFragment */
 /** @jsxRuntime classic */
-import { myCreateElement, myFragment } from '@/mini-react-hooks/my-jsx-runtime';
+import { hansCreateElement, hansFragment } from '@/mini-react-hooks/hans-jsx-runtime';
 import SubDemo from './app-subs/SubDemo';
 import SubDemoWithFragment from './app-subs/SubDemoWithFragment';
 import SubWithChildren from './app-subs/SubWithChildren';

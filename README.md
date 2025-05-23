@@ -6,7 +6,7 @@ TODO。跟着[参考链接 1](https://pomb.us/build-your-own-react/)，实现一
 
 这次还是通过参考 deepseek 生成的代码来初始化项目。Prompt：
 
-> 如何在 Typescript 项目中，使用 babel-plugin-transform-react-jsx，或者其他更合适的 Babel 插件，将 jsx 代码转为 myCreateElement 函数的调用？
+> 如何在 Typescript 项目中，使用 babel-plugin-transform-react-jsx，或者其他更合适的 Babel 插件，将 jsx 代码转为 hansCreateElement 函数的调用？
 >
 > 补充：使用 vite vanilla typescript 和最新版 Babel。输出完整代码。
 
@@ -35,8 +35,8 @@ export default defineConfig({
           [
             "@babel/plugin-transform-react-jsx",
             {
-              pragma: "myCreateElement",
-              pragmaFrag: "myFragment",
+              pragma: "hansCreateElement",
+              pragmaFrag: "hansFragment",
             },
           ],
         ],
@@ -51,19 +51,22 @@ export default defineConfig({
 接下来的配置，是解决 IDE 报错的问题，不解决也不影响运行。不同于 React 项目，我们还需要在每个`.tsx`文件下添加：
 
 ```ts
-/** @jsx myCreateElement */
-/** @jsxFrag myFragment */
+/** @jsx hansCreateElement */
+/** @jsxFrag hansFragment */
 /** @jsxRuntime classic */
-import { myCreateElement, myFragment } from "@/mini-react-hooks/my-jsx-runtime";
+import {
+  hansCreateElement,
+  hansFragment,
+} from "@/mini-react-hooks/hans-jsx-runtime";
 ```
 
 `jsx, jsxFrag`的作用为镇压 TS 报错。比如：
 
 ```
-'myFragment' is declared but its value is never read.ts(6133)
+'hansFragment' is declared but its value is never read.ts(6133)
 ```
 
-根据[参考链接 2](https://bin.zmide.com/?p=1037)，vite 会在控制台报警告：`[vite] (client) warning: The JSX factory cannot be set when using React's "automatic" JSX transform /** @jsx myCreateElement */`。设置`classic`的可以镇压这个警告。
+根据[参考链接 2](https://bin.zmide.com/?p=1037)，vite 会在控制台报警告：`[vite] (client) warning: The JSX factory cannot be set when using React's "automatic" JSX transform /** @jsx hansCreateElement */`。设置`classic`的可以镇压这个警告。
 
 ### IDE 报错： Cannot use JSX unless the '--jsx' flag is provided
 

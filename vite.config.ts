@@ -10,8 +10,8 @@ export default defineConfig({
           [
             '@babel/plugin-transform-react-jsx',
             {
-              pragma: 'myCreateElement',
-              pragmaFrag: 'myFragment'
+              pragma: 'hansCreateElement',
+              pragmaFrag: 'hansFragment'
             }
           ]
         ]

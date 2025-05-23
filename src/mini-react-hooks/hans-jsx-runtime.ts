@@ -10,7 +10,7 @@ interface Element {
   children: Children
 }
 
-export function myCreateElement(
+export function hansCreateElement(
   type: string | Function,
   props: Props,
   ...children: Children
@@ -41,7 +41,7 @@ export function myCreateElement(
   };
 }
 
-export function myFragment(props: Props): Element {
+export function hansFragment(props: Props): Element {
   const { children, ...restProps } = props;
-  return myCreateElement(FRAGMENT_NAME, restProps, ...children);
+  return hansCreateElement(FRAGMENT_NAME, restProps, ...children);
 }

@@ -1,7 +1,7 @@
-/** @jsx myCreateElement */
-/** @jsxFrag myFragment */
+/** @jsx hansCreateElement */
+/** @jsxFrag hansFragment */
 /** @jsxRuntime classic */
-import { myCreateElement } from '@/mini-react-hooks/my-jsx-runtime';
+import { hansCreateElement } from '@/mini-react-hooks/hans-jsx-runtime';
 import './SubDemo.css';
 
 interface SubDemoProps {
